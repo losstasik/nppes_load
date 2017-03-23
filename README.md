@@ -9,9 +9,16 @@ Load NPPES and Taxonomy data into PostgreSQl and Oracle
 
 ### PostgreSQL
 
-#### Remove all empty "" 
+Clean data. Remove all empty "" 
 ```
 sed 's/""//g' npidata_20050523-20170312.csv > nppes.csv
 ```
+
+Load data into nppes table
+```
+\copy nppes from 'nppes.csv' with CSV header delimiter as ',' null as '';
+```
+
+
 
 
